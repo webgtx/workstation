@@ -22,3 +22,4 @@ if [[ $installOption = "1" ]]; then
       fi
     echo ""
 fi
+exec bash
