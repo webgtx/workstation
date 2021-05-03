@@ -38,4 +38,9 @@ if [[ $installOption = "1" ]]; then
     fi
     bash software.sh
 fi
+if [[ installOption = "2" ]]; then
+  pacman -Sy
+  pacman -S wget 
+  wget matmoul.github.io/archfi
+  bash archfi.sh 
 exec bash
