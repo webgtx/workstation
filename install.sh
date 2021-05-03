@@ -1,25 +1,41 @@
-#/bin/bash/
+#!/bin/bash/
 echo ""
-echo "			Welcome to i3wm installation by webgtx"
+echo "			Welcome to ArchDX installation by webgtx"
   sleep 2
 echo ""
 echo "	Choose your option"
 echo ""
-echo "		1) Arch Linux"
-echo "		2) Debian & Ubuntu"
+echo "		1) Installation ArchDX, already on finished Arch Linux"
+echo "		2) LiveUSB installation"
   read installOption
 
 if [[ $installOption = "1" ]]; then
-    echo ""
-    echo "You wanna use my i3wm config or your own?"
-    echo "Input (own/your)"
-    read configOption
-      if [[ $configOption = 'your' ]]; then
-        cp .config -r /home/$USER/
-        pacman -S i3-gaps i3-gaps i3blocks i3lock i3status
-        pacman -S termite picom nitrogen
-        echo "Done, now you need log out from your DE, and run I3WM"
-      fi
-    echo ""
+  echo ""
+  echo "You wanna use my i3wm config or your own?"
+  echo "Input (own/your)"
+  read configOption
+    if [[ $configOption = 'your' ]]; then
+      cp .config -r /home/$USER/
+      sudo pacman -S i3-gaps i3-gaps i3blocks i3lock i3status termite picom nitrogen cmus neofetch htop
+      echo "Done, now you need logout from your DE, and run I3WM"
+    else
+      echo "Okay, the native i3wm installation started"
+      sudo pacman -S i3-wm i3blocks i3lock i3status termite picom nitrogen cmus neofetch htop
+    fi
+  echo "Do you wanna install BlackArch repository? y/n"
+  read blackarchOption
+    if [[ $blackarchOption = "y" ]]; then
+      curl -O https://blackarch.org/strap.sh
+      sha1sum strap.sh
+      echo "# shouldmatch: d062038042c5f141755ea39dbd615e6ff9e23121"
+      sleep 5
+      sudo chmod+x strap.sh 
+      sudo ./strap.sh
+      sudo pacman -Syyu
+      echo "Done, good luck Mr. Alderson."
+    else
+      echo "No problem."
+    fi
+    bash software.sh
 fi
 exec bash
