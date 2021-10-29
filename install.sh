@@ -10,17 +10,15 @@ echo "		2) LiveUSB installation"
   read installOption
 
 if [[ $installOption = "1" ]]; then
-  echo ""
-  echo "You wanna use my i3wm config or your own?"
-  echo "Input (own/your)"
-  read configOption
+  printf "\nYou wanna use my i3wm config or your own?"
+  read -p "Input (own/your): " configOption
     if [[ $configOption = 'your' ]]; then
       cp .config -r /home/$USER/
-      sudo pacman -S i3-gaps i3-gaps i3blocks i3lock i3status termite picom nitrogen cmus neofetch htop
+      sudo pacman -S i3 i3-gaps i3blocks i3lock i3status sakura picom nitrogen cmus neofetch htop
       echo "Done, now you need logout from your DE, and run I3WM"
     else
       echo "Okay, the native i3wm installation started"
-      sudo pacman -S i3-wm i3blocks i3lock i3status termite picom nitrogen cmus neofetch htop
+      sudo pacman -S i3 i3-gaps i3blocks i3lock i3status sakura picom nitrogen cmus neofetch htop
     fi
   echo "Do you wanna install BlackArch repository? y/n"
   read blackarchOption
@@ -42,5 +40,6 @@ if [[ installOption = "2" ]]; then
   pacman -Sy
   pacman -S wget 
   wget matmoul.github.io/archfi
-  bash archfi.sh 
+  bash archfi.sh
+fi
 exec bash
