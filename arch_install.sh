@@ -1,4 +1,4 @@
-#!/bin/sh/
+#!/bin/sh
 echo "	Welcome to ArchDX installation by webgtx"
 sleep 2
 echo ""
@@ -7,8 +7,7 @@ echo "	2) LiveUSB installation"
 echo ""
 read -p "Choose your option: " installOption
 
-setup_reqr() {
-  pacman -S \
+pacman -S \
   i3 \
   i3-gaps \
   i3blocks \
@@ -19,19 +18,18 @@ setup_reqr() {
   nitrogen \
   cmus \ 
   neofetch \
-  htop
-}
+  htop \
+  -y
+
 
 if [[ $installOption = "1" ]]; then
   printf "\nYou wanna use my i3wm config or your own?"
   read -p "Input (own/your): " configOption
     if [[ $configOption = 'your' ]]; then
       cp .config -r /home/$USER/
-      setup_reqr()
       echo "Done, now you need logout from your DE, and run I3WM"
     else
       echo "Okay, the native i3wm installation started"
-      setup_reqr()
     fi
   read -p "Do you wanna install BlackArch repository? y/n" blackarchOption
     if [[ $blackarchOption = "y" ]]; then

@@ -1,27 +1,21 @@
 <div>
-    <h1 align="center">ArchDX</h1>
+    <h1 align="center"><b>USPACE</b></h1>
 </div>
 
 <div>
-<h2 align="center">The lightweight OS based on I3WM</h2>
+<h2 align="center">The lightweight user space based on I3WM</h2>
 </div>
 
 <div>
-<img alt="" src="https://i.imgur.com/zEppkb4.png">
+<img alt="preview" src="assets/preview.png">
 </div>
-
 ### This is the script that builds the ideal operating system for:
-
 - Development
-
 - Hacking
+- Syncing
 
-- Homeusing
-
-
-
-### Installation and using
-
+### Installation
 ```bash
-sudo chmod+x install.sh && ./install.sh
+# Script working almost on all distrubtions, use the interactive.
+./uspace.sh
 ```
