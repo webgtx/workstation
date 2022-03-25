@@ -9,6 +9,7 @@
 <div>
 <img alt="preview" src="assets/preview.png">
 </div>
+
 ### This is the script that builds the ideal operating system for:
 - Development
 - Hacking
