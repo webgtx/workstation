@@ -187,6 +187,8 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         status_command i3status
+        background #1d1f21
+        statusline #ffffff
 }
 
 # i3-gaps
