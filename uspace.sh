@@ -2,7 +2,6 @@
 
 cat assets/uspace.ascii
 
-
 while [[ true ]];
 do
   cat assets/menu.ascii
