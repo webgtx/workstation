@@ -180,11 +180,10 @@ bar {
 }
 
 # Gaps
-for_window [class=".*"] border pixel 2
+default_border pixel 2
 
 gaps inner 10
 gaps outer 4
-
 
 # class                 border      background  text        indicator   child_border
 client.focused          $fg         $bg         $fg         $fg         $fg
