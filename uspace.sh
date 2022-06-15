@@ -5,7 +5,7 @@ cat assets/uspace.ascii
 while [[ true ]];
 do
   cat assets/menu.ascii
-  read -p "uspace: " option
+  read -p "[ uspace ]: " option
   case "$option" in 
     "1")
       ./redhat_install.sh
