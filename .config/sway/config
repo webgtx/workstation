@@ -169,15 +169,7 @@ set $bg #1b1d1e
 set $fg #c5c8c6
 
 # Status bar
-bar {
-    status_command while date +'%-d.%-m.%Y. %H:%M:%S %p'; do sleep 1; done;
-
-    colors {
-          background #1d1f21
-          statusline #ffffff
-    }
-    
-}
+bar swaybar_command waybar
 
 # Gaps
 default_border pixel 2
