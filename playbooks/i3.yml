@@ -1,0 +1,21 @@
+--- 
+- name: Setup user environment 
+  hosts: localhost
+  connection: local
+  
+  tasks:
+    - name: Resolve requirements
+      become: true 
+      package:
+        name:
+          - i3-gaps
+          - i3lock
+          - i3status
+          - dmenu
+          - nitrogen
+          - picom
+          - alacritty
+        state: present
+    - name: Move all configs
+      shell: cp -r ./../.config/* ~/.config/
+

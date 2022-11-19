@@ -1,0 +1,21 @@
+--- 
+- name: Setup user environment 
+  hosts: localhost
+  connection: local
+  
+  tasks:
+    - name: Resolve requirements
+      become: true 
+      package:
+        name:
+          - sway
+          - waybar
+          - wl-clipboard
+          - wofi
+          - waylock
+          - grim
+          - alacritty
+        state: present
+    - name: Move all configs
+      shell: cp -r ./../.config/* ~/.config/
+

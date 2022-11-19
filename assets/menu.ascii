@@ -1,9 +1,9 @@
-
-|# Select distribution
 |
-|- 1) RedHat Family 
-|- 2) Arch Family
-|- 3) Debian Family
-|- 4) Void Linux
-|- 5) Alpine Linux
-|- 6) Linux From Scratch
+|- # Select WM 
+|
+|--> 1) Casual SWAY
+|         | Includes (WAYBAR/WOFI/GRIM/ALACRITTY)
+|
+|--> 2) Classic I3
+|         | Includes (DMENU/PICOM/NITROGEN)
+|

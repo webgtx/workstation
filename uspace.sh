@@ -1,18 +1,18 @@
-#!/bin/sh
+#!/bin/bash
 
 cat assets/uspace.ascii
 
 while [[ true ]];
 do
-  cat assets/menu.ascii
+  cat ./assets/menu.ascii
   read -p "[ uspace ]: " option
   case "$option" in 
     "1")
-      ./redhat_install.sh
+      ansible-playbook ./playbooks/sway.yml --ask-become 
       exit 0
       ;;
     "2")
-      ./arch_install.sh
+      ansible-playbook ./playbooks/i3.yml --ask-become 
       exit 0
       ;;
     *)

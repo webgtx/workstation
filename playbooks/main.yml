@@ -1,0 +1,10 @@
+--- 
+- name: Just testing localhost 
+  hosts: localhost
+  connection: local
+
+  tasks:
+    - name: lets check all ours running processes
+      shell: ps -aux
+      register: output
+
