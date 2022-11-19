@@ -3,7 +3,7 @@
 </div>
 
 <div>
-<h2 align="center">The lightweight user space based on SWAY/I3</h2>
+<h2 align="center">UserSpace - Fully automatic SWAY/I3 environment installation</h2>
 </div>
 
 <div>
@@ -11,9 +11,12 @@
 <img alt="preview" src="assets/preview.png">
 </div>
 
+### Requirements 
+- Ansible
+- Bash 
+- Python3.9
+
 ### Installation
-> Script is outdated, feel free to edit configs and resolve requirements by yourself ;)
-```bash
-# Script working almost on all distrubtions, use the interactive.
+```bash 
 ./uspace.sh
 ```
