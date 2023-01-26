@@ -3,7 +3,7 @@
 
 set $mod Mod1
 
-font pango:xos4 Terminus 8 
+font pango:xos4 Ubuntu 8 
 
 exec --no-startup-id nm-applet
 
@@ -40,7 +40,7 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+Shift+q kill
 
 # Program launcher
-bindsym $mod+d exec --no-startup-id wofi -S run 
+bindsym $mod+d exec --no-startup-id bemenu-run 
 
 # Change focus
 bindsym $mod+j focus left

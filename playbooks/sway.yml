@@ -12,9 +12,10 @@
           - waybar
           - wl-clipboard
           - wofi
-          - waylock
+          # - waylock
           - grim
           - alacritty
+          - bemenu
         state: present
     - name: Move all configs
       shell: cp -r ./../.config/* ~/.config/
