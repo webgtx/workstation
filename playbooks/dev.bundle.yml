@@ -1,0 +1,19 @@
+---
+- host: localhost
+  connection: local
+
+  tasks:
+    - name: Ensure in development software 
+      pacakge:
+        name: 
+          - sublime-text4
+          - nodejs-lts
+          - go
+          - clang
+          - podman
+          - podman-compose
+          - ansible
+      become: true
+      when: ansible_os_family == "Void"
+
+
