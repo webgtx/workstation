@@ -7,7 +7,7 @@
 </div>
 
 <div>
-<img alt="preview" src="assets/webplus_preview.png">
+<img alt="preview" src="assets/wbplus_preview.png">
 <img alt="preview" src="assets/preview1.png">
 <img alt="preview" src="assets/preview.png">
 </div>
