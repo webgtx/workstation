@@ -15,5 +15,3 @@
           - ansible
       become: true
       when: ansible_os_family == "Void"
-
-
