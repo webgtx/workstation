@@ -1,0 +1,26 @@
+---
+- hosts: localhost
+  connection: local
+
+  tasks:
+    - name: Add remote repository
+      shell: flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
+    - name: Install regular flatpak apps
+      community.general.flatpak:
+        name:
+          - org.telegram.desktop
+          - xyz.diamondb.gtkcord4
+          - app.drey.Dialect
+          - org.chromium.Chromium
+          - org.gnome.Fractal
+          - com.raggesilver.BlackBox
+          - org.gnome.Polari
+          - org.gaphor.Gaphor
+          - org.gnome.Geary
+          - com.github.micahflee.torbrowser-launcher
+          - com.mattjakeman.ExtensionManager
+          - org.gnome.Builder
+          - com.github.tchx84.Flatseal
+
+      

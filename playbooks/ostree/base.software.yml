@@ -1,0 +1,16 @@
+---
+- hosts: localhost
+  connection: local
+
+  tasks:
+    - name: Install overlay packages
+      community.general.rpm_ostree_pkg:
+        name:
+          - wl-clipboard
+          - gnome-tweaks
+          - ufw
+          - arp-scan
+          - htop
+
+    - name: Commit overlay changes
+      shell: systemctl reboot

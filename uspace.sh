@@ -8,11 +8,11 @@ do
   read -p "[ uspace ]: " option
   case "$option" in 
     "1")
-      ansible-playbook ./playbooks/sway.yml --ask-become 
+      ansible-playbook ./playbooks/traditional/sway.yml --ask-become 
       exit 0
       ;;
     "2")
-      ansible-playbook ./playbooks/i3.yml --ask-become 
+      ansible-playbook ./playbooks/traditional/i3.yml --ask-become 
       exit 0
       ;;
     *)

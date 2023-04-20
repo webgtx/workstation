@@ -3,7 +3,14 @@
 
 set $mod Mod1
 
-font pango:xos4 Ubuntu 8 
+set $term alacritty 
+
+set $rofi_cmd rofi \
+        -terminal '$term'
+
+set $menu $rofi_cmd -show combi -combi-modes drun#run -modes combi
+
+font pango:"JetBrainsMono NF" Regular 11
 
 exec --no-startup-id nm-applet
 
@@ -27,20 +34,20 @@ input type:keyboard {
 }
 
 # Brightness
-bindsym $mod+o exec doas light -A 10 
-bindsym $mod+i exec doas light -U 10
+bindsym $mod+o exec light -A 10 
+bindsym $mod+i exec light -U 10
 
 # Drag Mod 
 floating_modifier $mod
 
 # Terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec $term
 
 # Kill focused window
 bindsym $mod+Shift+q kill
 
 # Program launcher
-bindsym $mod+d exec --no-startup-id bemenu-run 
+bindsym $mod+d exec --no-startup-id $menu 
 
 # Change focus
 bindsym $mod+j focus left
@@ -186,4 +193,4 @@ client.placeholder      $bg         $bg         $fg         $bg         $bg
 client.background       $bg
 
 # Wallpapers
-exec swaybg -i ~/Pictures/Wallpapers/pexels-jakub-novacek-924824.jpg --mode fill 
+exec swaybg -i /var/home/dxv1d/Pictures/Wallpapers/pixels.png --mode fill 

@@ -1,23 +1,14 @@
-<div>
-    <h1 align="center"><b>USPACE</b></h1>
-</div>
+# workstation.starfighter ⚡️
+> My own architecture of my workstation 
 
-<div>
-<h2 align="center">UserSpace - Fully automatic SWAY/I3 environment installation</h2>
-</div>
+![preview](./.github/ref.png)
 
-<div>
-<img alt="preview" src="assets/wbplus_preview.png">
-<img alt="preview" src="assets/preview1.png">
-<img alt="preview" src="assets/preview.png">
-</div>
-
-### Requirements 
+### Requirements
+- OSTREE Based OS (CoreOS, Silverblue)
 - Ansible
-- Bash 
-- Python3.9
 
-### Installation
-```bash 
-./uspace.sh
-```
+### How to use
+1) Run `ansible-galaxy install -r requirements.yml`
+2) Execute `base.software.yml`
+3) Execute `flatpak.software.yml` 
+4) Exectue `shellrc.init.yml`
