@@ -1,11 +1,22 @@
-# workstation.starfighter ⚡️
-> My own architecture of my workstation 
+<div>
+    <h1 align="center"><b>workstation.starfighter ⚡️</b></h1>
+</div>
 
-![preview](./.github/ref.png)
+<div>
+<h2 align="center">Featureful automated workstation</h2>
+</div>
+
+<div>
+<img alt="preview" src="assets/wbplus_preview.png">
+<img alt="preview" src="assets/preview1.png">
+<img alt="preview" src="assets/preview.png">
+</div>
 
 ### Requirements
-- OSTREE Based OS (CoreOS, Silverblue)
 - Ansible
+- Bash
+- Python3.9
+- OSTREE Based OS (CoreOS, Silverblue)
 
 ### How to use
 1) Run `ansible-galaxy install -r requirements.yml`
