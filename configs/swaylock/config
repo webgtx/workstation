@@ -1,42 +1,30 @@
-ignore-empty-password
-font=Ubuntu
+# Swaylock config file
+# Set the background color to gray
+background-color #888888
 
-clock
-timestr=%R
-datestr=%a, %e of %B
-indicator
-indicator-radius=240
-indicator-thickness=20
-indicator-caps-lock
+# Set the color of the text and indicators to red
+font-color #FF0000
+indicator-color #FF0000
 
-key-hl-color=880033
+# Set the font and font size
+font-size 25
+font-family DejaVu Sans Mono
 
-separator-color=00000000
+# Set the radius of the indicator
+indicator-radius 150
 
-inside-color=00000099
-inside-clear-color=ffd20400
-inside-caps-lock-color=009ddc00
-inside-ver-color=d9d8d800
-inside-wrong-color=ee2e2400
+# Set the position of the clock
+clock-pos 1500 800
 
-ring-color=231f20D9
-ring-clear-color=231f20D9
-ring-caps-lock-color=231f20D9
-ring-ver-color=231f20D9
-ring-wrong-color=231f20D9
+# Set the position and size of the date
+date-pos 1500 900
+date-size 20
 
-line-color=00000000
-line-clear-color=ffd204FF
-line-caps-lock-color=009ddcFF
-line-ver-color=d9d8d8FF
-line-wrong-color=ee2e24FF
+# Set the position and size of the unlock indicator
+unlock-indicator-pos 800 1000
+unlock-indicator-size 50
 
-text-clear-color=ffd20400
-text-ver-color=d9d8d800
-text-wrong-color=ee2e2400
+# Set the position and size of the caps lock indicator
+caps-lock-indicator-pos 900 1000
+caps-lock-indicator-size 50
 
-bs-hl-color=ee2e24FF
-caps-lock-key-hl-color=ffd204FF
-caps-lock-bs-hl-color=ee2e24FF
-disable-caps-lock-text
-text-caps-lock-color=009ddc

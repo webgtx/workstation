@@ -10,6 +10,8 @@ set $rofi_cmd rofi \
 
 set $menu $rofi_cmd -show combi -combi-modes drun#run -modes combi
 
+set $screenlock swaylock -c 161616
+
 font pango:"JetBrainsMono NF" Regular 11
 
 exec --no-startup-id nm-applet
@@ -45,6 +47,9 @@ bindsym $mod+Return exec $term
 
 # Kill focused window
 bindsym $mod+Shift+q kill
+
+# Lock the screen
+bindsym $mod+Ctrl+l exec $screenlock
 
 # Program launcher
 bindsym $mod+d exec --no-startup-id $menu 

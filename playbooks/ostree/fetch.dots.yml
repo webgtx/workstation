@@ -1,0 +1,15 @@
+---
+- hosts: localhost
+  connection: local
+
+  tasks:
+    - name: Sync the dot configs
+      synchronize:
+        src: ../../configs/{{ item }}
+        dest: /$HOME/.config
+        recursive: true
+      loop: 
+        - swaylock
+        - sway
+        - waybar
+        - alacritty

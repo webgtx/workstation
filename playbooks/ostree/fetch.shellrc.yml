@@ -1,0 +1,18 @@
+---
+- hosts: localhost
+  connection: local
+
+  tasks:
+    - name: Copy shellrc file to host
+      copy:
+        src: ../../rcs/{{ item }}
+        dest: $HOME/.{{ item }}
+        follow: true
+      loop:
+        - bashrc 
+        - zshrc
+
+    - name: Copy ascii assets
+      copy:
+        src: ../../assets
+        dest: ~/.local/share
