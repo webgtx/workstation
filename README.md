@@ -13,10 +13,15 @@
 </div>
 
 ### Requirements
+*OSTREE version*
 - Ansible
 - Bash
 - Python3.9
 - OSTREE Based OS (CoreOS, Silverblue)
+*Traditional version*
+- Ansible
+- Bash
+- DNF/YUM 
 
 ### How to use
 1) Run `ansible-galaxy install -r requirements.yml`

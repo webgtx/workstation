@@ -76,6 +76,8 @@ plugins=(
   terraform
   python
   fzf
+  gcloud
+  kubectl
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -105,6 +107,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias podman="flatpak-spawn --host podman"
-alias copy="flatpak-spawn --host wl-copy"
-alias python="python3"
+alias hostexec="flatpak-spawn --host"
+alias pdmn="hostexec podman"
+# alias copy="hostexec wl-copy" # Won't connect to wayland server
+alias subl="flatpak run com.sublimehq.SublimeText"

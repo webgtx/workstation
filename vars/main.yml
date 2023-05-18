@@ -1,0 +1,9 @@
+dots:
+  - swaylock
+  - sway
+  - waybar
+  - alacritty
+
+shells:
+  - bash
+  - zsh

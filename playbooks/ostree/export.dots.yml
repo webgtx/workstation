@@ -1,6 +1,7 @@
 ---
 - hosts: localhost
   connection: local
+  vars_files: "../../vars/main.yml"
 
   tasks:
     - name: Sync the dot configs
@@ -8,8 +9,4 @@
         src: ../../configs/{{ item }}
         dest: /$HOME/.config
         recursive: true
-      loop: 
-        - swaylock
-        - sway
-        - waybar
-        - alacritty
+      loop: "{{ dots }}"
