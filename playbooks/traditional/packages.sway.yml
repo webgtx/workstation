@@ -1,6 +1,5 @@
 --- 
-- name: Setup user environment 
-  hosts: localhost
+- hosts: localhost
   connection: local
   
   tasks:
@@ -17,6 +16,3 @@
           - alacritty
           - bemenu
         state: present
-    - name: Move all configs
-      shell: cp -r ./../.config/* ~/.config/
-

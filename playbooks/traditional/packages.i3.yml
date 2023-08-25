@@ -1,6 +1,5 @@
 --- 
-- name: Setup user environment 
-  hosts: localhost
+- hosts: localhost
   connection: local
   
   tasks:
@@ -16,6 +15,3 @@
           - picom
           - alacritty
         state: present
-    - name: Move all configs
-      shell: cp -r ./../.config/* ~/.config/
-
