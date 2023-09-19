@@ -1,0 +1,17 @@
+---
+- hosts: localhost
+  connection: local
+  vars_files: "../../vars/main.yml"
+
+  tasks:
+    - name: Copy shellrc file to host
+      copy:
+        src: "../../rcs/{{ item }}rc" 
+        dest: "$HOME/.{{ item }}rc" 
+        follow: true
+      loop: "{{ shells }}"
+
+    - name: Copy ascii assets
+      copy:
+        src: ../../assets
+        dest: ~/.local/share

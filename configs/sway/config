@@ -5,14 +5,19 @@ set $mod Mod1
 
 set $term alacritty 
 
-set $rofi_cmd rofi \
-        -terminal '$term'
+# set $rofi_cmd rofi \
+#         -terminal '$term'
 
-set $menu $rofi_cmd -show combi -combi-modes drun#run -modes combi
+set $menu bemenu-run
+# $rofi_cmd -show combi -combi-modes drun#run -modes combi
 
 set $screenlock swaylock -c 161616
 
+<<<<<<< HEAD
 font pango:"JetBrainsMono NF" Regular 10  
+=======
+font pango:"JetBrainsMono NF" Regular 8 
+>>>>>>> origin/main
 
 exec --no-startup-id nm-applet
 
