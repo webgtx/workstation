@@ -75,10 +75,12 @@ plugins=(
   ansible
   terraform
   python
-  fzf
   gcloud
   aws
   kubectl
+  minikube
+  doctl
+  dnf
   docker
 )
 
@@ -110,6 +112,6 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias hostexec="flatpak-spawn --host"
-alias docker="hostexec podman"
+# alias docker="hostexec podman"
 # alias copy="hostexec wl-copy" # Won't connect to wayland server
 # alias subl="flatpak run com.sublimehq.SublimeText"
