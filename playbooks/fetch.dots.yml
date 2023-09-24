@@ -1,12 +1,12 @@
 ---
 - hosts: localhost
   connection: local
-  vars_files: "../../vars/main.yml"
+  vars_files: "../vars/main.yml"
 
   tasks:
     - name: Sync the dot configs
       synchronize:
-        src: ../../configs/{{ item }}
+        src: ../configs/{{ item }}
         dest: /$HOME/.config
         recursive: true
       loop: "{{ dots }}"

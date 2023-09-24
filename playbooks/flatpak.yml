@@ -1,0 +1,16 @@
+---
+- hosts: localhost
+  connection: local
+
+  tasks:
+    - name: Add remote repository
+      shell: flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
+    - name: Install regular flatpak apps
+      community.general.flatpak:
+        name:
+          - org.eu.encom.spectral
+          - com.github.tchx84.Flatseal
+          - com.mattermost.Desktop
+
+      
