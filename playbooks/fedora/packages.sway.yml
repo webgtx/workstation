@@ -10,9 +10,9 @@
           - sway
           - waybar
           - wl-clipboard
-          - wofi
+          # - wofi
           # - waylock
           - grim
           - alacritty
-          - bemenu
+          # - bemenu
         state: present

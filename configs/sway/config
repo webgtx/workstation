@@ -1,23 +1,21 @@
 # webgtx @ 2022
 # dxv1d@tuta.io
 
-set $mod Mod1
+set $mod Mod4
+set $alt Mod1
 
 set $term alacritty 
 
 # set $rofi_cmd rofi \
 #         -terminal '$term'
 
-set $menu bemenu-run
-# $rofi_cmd -show combi -combi-modes drun#run -modes combi
+# set $menu bemenu-run
+set $rofi_cmd rofi -show combi -combi-modes drun 
 
 set $screenlock swaylock -c 161616
 
-<<<<<<< HEAD
 font pango:"JetBrainsMono NF" Regular 10  
-=======
 font pango:"JetBrainsMono NF" Regular 8 
->>>>>>> origin/main
 
 exec --no-startup-id nm-applet
 
@@ -57,13 +55,13 @@ bindsym $mod+Shift+q kill
 bindsym $mod+Ctrl+l exec $screenlock
 
 # Program launcher
-bindsym $mod+d exec --no-startup-id $menu 
+bindsym $mod+d exec --no-startup-id $rofi_cmd 
 
 # Change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # Alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -72,10 +70,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # Move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # Alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -84,10 +82,10 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # Split in horizontal orientation
-bindsym $mod+h split h
+bindsym $alt+h split h
 
 # Split in vertical orientation
-bindsym $mod+v split v
+bindsym $alt+v split v
 
 # Enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle

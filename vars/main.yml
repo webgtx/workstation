@@ -5,5 +5,4 @@ dots:
   - alacritty
 
 shells:
-  - bash
   - zsh

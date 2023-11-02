@@ -1,21 +1,15 @@
 ---
 - hosts: localhost
   connection: local
+  become: true
 
   tasks:
-
-    - name: Check if EPEL repository installed 
-      stat:
-        path: /etc/yum.repos.d/epel.repo
-      register: epelrepo
 
     - name: Add required repostiories
       command:
         cmd: dnf config-manager --add-repo "{{ item }}"  
-      become: true
       loop:
           - https://pkgs.tailscale.com/stable/rhel/9/tailscale.repo
-          - https://cli.github.com/packages/rpm/gh-cli.repo
           - https://gist.githubusercontent.com/webgtx/c1f68f5a063c3c10e9539b9f4645c890/raw/aa9d68399817a95d4755cfd5e224427028b9d7fe/kubernetes.repo
 
     - name: Ensure in useful packages for my daily workflow
@@ -25,8 +19,8 @@
           - ruby
           - bat
           - htop
+          - alacritty
           - gh
-          - chromium
           - irssi
           - clang
           - podman
@@ -34,14 +28,12 @@
           - podman-compose
           - proxychains-ng
           - openvpn
-          - NetworkManager-openvpn
           - wireguard-tools
+          - NetworkManager-openvpn
           - lxappearance
           - tor
           - tailscale
           - keepassxc
           - kubectl
           - helm
-      become: true
-      when: epelrepo.stat.exists
     
