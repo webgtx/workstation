@@ -19,12 +19,16 @@ font pango:"JetBrainsMono NF" Regular 8
 
 exec --no-startup-id nm-applet
 
-# Use pactl to adjust volume in PulseAudio.
-set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+set $volume_helper_cmd /usr/libexec/sway/volume-helper
+# Allow volume controls even if the screen is locked
+bindsym --locked {
+    XF86AudioRaiseVolume exec \
+        $volume_helper_cmd --limit "$volume_limit" --increase "$volume_step"
+    XF86AudioLowerVolume exec \
+        $volume_helper_cmd --limit "$volume_limit" --decrease "$volume_step"
+    XF86AudioMute    exec pactl set-sink-mute @DEFAULT_SINK@ toggle && $volume_helper_cmd
+    XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+}
 
 # Input
 input type:touchpad {
@@ -106,6 +110,9 @@ bindsym $mod+a focus parent
 
 # Focus the child container
 #bindsym $mod+d focus child
+
+# Take screenshot to the clipboard
+bindsym $mod+p exec grim -g "$(slurp -d)" - | wl-copy
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
