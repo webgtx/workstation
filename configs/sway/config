@@ -51,6 +51,19 @@ bindsym XF86MonBrightnessDown exec \
 bindsym XF86MonBrightnessUp exec \
         'STEP="$brightness_step" && light -A ${STEP:-5} && $brightness_notification_cmd'
 
+# Screenshots 
+bindsym {
+    # Capture the currently active output
+    Print       exec grimshot save output
+    # Capture the currently active window
+    Alt+Print   exec grimshot save active
+    # Select and capture a custom rectangular area
+    Ctrl+Print  exec grimshot save area
+    # Select and copy a custom rectangular area
+    Ctrl+Shift+Print exec grimshot copy area
+}
+
+
 # Drag Mod 
 floating_modifier $mod
 
@@ -115,9 +128,6 @@ bindsym $mod+a focus parent
 
 # Focus the child container
 #bindsym $mod+d focus child
-
-# Take screenshot to the clipboard
-bindsym $mod+p exec grim -g "$(slurp -d)" - | wl-copy
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
