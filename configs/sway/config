@@ -17,8 +17,6 @@ set $screenlock swaylock -c 161616
 font pango:"JetBrainsMono NF" Regular 10  
 font pango:"JetBrainsMono NF" Regular 8 
 
-exec --no-startup-id nm-applet
-
 set $volume_helper_cmd /usr/libexec/sway/volume-helper
 # Allow volume controls even if the screen is locked
 bindsym --locked {
@@ -43,8 +41,15 @@ input type:keyboard {
 }
 
 # Brightness
-bindsym $mod+o exec light -A 10 
-bindsym $mod+i exec light -U 10
+set $brightness_notification_cmd  command -v notify-send >/dev/null && \
+        VALUE=$(light) && VALUE=${VALUE%%.*} && \
+        notify-send -e -h string:x-canonical-private-synchronous:brightness \
+            -h "int:value:$VALUE" -t 800 "Brightness: ${VALUE}%"
+
+bindsym XF86MonBrightnessDown exec \
+        'STEP="$brightness_step" && light -U ${STEP:-5} && $brightness_notification_cmd'
+bindsym XF86MonBrightnessUp exec \
+        'STEP="$brightness_step" && light -A ${STEP:-5} && $brightness_notification_cmd'
 
 # Drag Mod 
 floating_modifier $mod
@@ -187,7 +192,7 @@ bindsym $mod+r mode "resize"
 
 # Colors
 set $bg #1b1d1e
-set $fg #c5c8c6
+set $fg #7a7a7a
 
 # Status bar
 bar swaybar_command waybar
@@ -207,5 +212,8 @@ client.placeholder      $bg         $bg         $fg         $bg         $bg
 
 client.background       $bg
 
-# Wallpapers
-exec swaybg -i /var/home/dxv1d/Pictures/Wallpapers/pixels.png --mode fill 
+# Applets
+exec --no-startup-id nm-applet
+
+# Daemons
+exec --no-startup-id dunst

@@ -3,6 +3,7 @@ dots:
   - sway
   - waybar
   - alacritty
+  - dunst
 
 shells:
   - zsh
