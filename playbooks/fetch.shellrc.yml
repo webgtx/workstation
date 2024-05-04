@@ -6,7 +6,7 @@
   tasks:
     - name: Copy shellrc file to host
       copy:
-        src: "../rcs/{{ item }}rc" 
+        src: "../rcs/{{ item }}rc"
         dest: "$HOME/.{{ item }}rc" 
         follow: true
       loop: "{{ shells }}"

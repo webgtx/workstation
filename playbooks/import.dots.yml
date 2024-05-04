@@ -7,6 +7,6 @@
     - name: Sync the dot configs
       synchronize:
         src: /$HOME/.config/{{ item }}
-        dest: ../configs 
+        dest: ../configs
         recursive: true
       loop: "{{ dots }}"
