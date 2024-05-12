@@ -1,15 +1,16 @@
 # webgtx @ 2022
 # dxv1d@tuta.io
 
+include /etc/sway/config.d/*.conf
+
 set $mod Mod4
 set $alt Mod1
 
-set $term alacritty 
+set $term foot 
 
 # set $rofi_cmd rofi \
 #         -terminal '$term'
 
-# set $menu bemenu-run
 set $rofi_cmd rofi -show combi -combi-modes drun 
 
 set $screenlock swaylock -c 161616
@@ -18,6 +19,7 @@ font pango:"JetBrainsMono NF" Regular 10
 font pango:"JetBrainsMono NF" Regular 8 
 
 set $volume_helper_cmd /usr/libexec/sway/volume-helper
+
 # Allow volume controls even if the screen is locked
 bindsym --locked {
     XF86AudioRaiseVolume exec \
@@ -54,15 +56,16 @@ bindsym XF86MonBrightnessUp exec \
 # Screenshots 
 bindsym {
     # Capture the currently active output
-    Print       exec grimshot save output
-    # Capture the currently active window
-    Alt+Print   exec grimshot save active
+    # Print       exec grimshot save output
+    # Select and record a custom rectangular area
+    # Alt+Print   exec wgifcap.sh 
     # Select and capture a custom rectangular area
     Ctrl+Print  exec grimshot save area
     # Select and copy a custom rectangular area
     Ctrl+Shift+Print exec grimshot copy area
-}
+    Ctrl+Shift+Alt+P exec grimshot copy area
 
+}
 
 # Drag Mod 
 floating_modifier $mod
@@ -181,10 +184,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -200,30 +203,8 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Colors
-set $bg #1b1d1e
-set $fg #7a7a7a
+include $HOME/.config/sway/startup.conf
+include $HOME/.config/sway/displays.conf
 
-# Status bar
-bar swaybar_command waybar
-
-# Gaps
-default_border pixel 2
-
-# gaps inner 10
-# gaps outer 4
-
-# class                 border      background  text        indicator   child_border
-client.focused          $fg         $bg         $fg         $fg         $fg
-client.focused_inactive $bg         $bg         $fg         $bg         $bg
-client.unfocused        $bg         $bg         $fg         $bg         $bg
-client.urgent           $bg         $bg         $fg         $bg         $bg
-client.placeholder      $bg         $bg         $fg         $bg         $bg
-
-client.background       $bg
-
-# Applets
-exec --no-startup-id nm-applet
-
-# Daemons
-exec --no-startup-id dunst
+# You can change theme by editing this line
+include $HOME/.config/sway/tokyonight.theme.conf
