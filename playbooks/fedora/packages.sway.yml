@@ -2,17 +2,12 @@
 - hosts: localhost
   connection: local
   
+  # I don't install packages that are pre-installed in fedora sway spin
   tasks:
     - name: Resolve requirements
       become: true 
       package:
         name:
-          - sway
-          - waybar
           - wl-clipboard
-          # - wofi
-          # - waylock
           - grim
-          - alacritty
-          # - bemenu
         state: present
