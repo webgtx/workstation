@@ -1,5 +1,5 @@
-# webgtx @ 2022
-# dxv1d@tuta.io
+# Alex Zolotarov @ 2024
+# alex@zolotarov.me 
 
 include /etc/sway/config.d/*.conf
 
@@ -8,15 +8,11 @@ set $alt Mod1
 
 set $term foot 
 
-# set $rofi_cmd rofi \
-#         -terminal '$term'
-
-set $rofi_cmd rofi -show combi -combi-modes drun 
+set $rofi_dmenu rofi -show combi -combi-modes drun 
 
 set $screenlock swaylock -c 161616
 
-font pango:"JetBrainsMono NF" Regular 10  
-font pango:"JetBrainsMono NF" Regular 8 
+font pango:"Noto Sans" Regular 8 
 
 set $volume_helper_cmd /usr/libexec/sway/volume-helper
 
@@ -80,7 +76,7 @@ bindsym $mod+Shift+q kill
 bindsym $mod+Ctrl+l exec $screenlock
 
 # Program launcher
-bindsym $mod+d exec --no-startup-id $rofi_cmd 
+bindsym $mod+d exec --no-startup-id $rofi_dmenu
 
 # Change focus
 bindsym $mod+h focus left

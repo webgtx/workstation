@@ -1,0 +1,8 @@
+# Whitelist for dotfiles
+
+dotfiles:
+  - sway # Window Manager
+  - waybar # Panel bar
+  - ranger # File Manager
+  - foot # Terminal
+  - dunst # Notifications
